@@ -55,12 +55,12 @@ BFC是一个隔离的容器，将BFC内部元素与外部元素相互隔离，�
 **BFC的创建条件（以下其一即可）：**
 
 - 根元素或其他包含它的元素；
-- 浮动（元素的float不为none）；
-- 元素的position不为static或relative（position为absolute或fixed）；
+- 浮动（元素的`float`不为`none`）；
+- 元素的position不为`static`或`relative`（`position`为`absolute`或`fixed`）；
 - 行内块（inline-blocks）（`display: inline-block;`）；
 - 表格单元格（`display: table-cell;`）；
-- overflow的值不为visible的元素（`overflow: hidden;`）；
-- 弹性盒flex boxes（display为flex或inline-flex）。
+- `overflow`的值不为`visible`的元素（`overflow: hidden;`）；
+- 弹性盒flex boxes（`display`为`flex`或`inline-flex`）。
 
 **BFC的特点：**
 
