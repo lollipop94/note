@@ -409,3 +409,34 @@ git push origin master
 如果使用`git pull`，提示`There is no tracking information for the current branch.`，则说明本地分支的链接关系没有创建，那么就需要执行命令`git branch --set-upstream-to=origin/<branch-name> <branch-name>`。
 
 如果想要git的提交历史是一条干净的直线，则执行命令`git rebase`。
+
+#### 在mac上首次使用git与github连接
+
+背景：首次使用没有SSH目录。
+
+打开终端，输入下面的命令直接创建一个新的SSH KEY：
+
+```
+ssh-keygen -t rsa -C "github账号的邮箱"
+```
+
+之后会出现下列语句：
+
+```
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/username/.ssh/id_rsa):
+```
+
+直接回车，然后出现下面的代码提示：
+
+```
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+```
+
+继续按回车，直到出现一大串内容就可以了，此时创建好了`id_rsa`和`id_rsa.pub`文件。
+然后找到`id_rsa.pub`文件，复制里面的内容。
+
+登录GitHub，点击右上角的头像下的`Settings`，然后点击`SSH and GPG keys`，点击`New SSH key`，在`Title`里输入你的邮箱，在`Key`里输入`id_rsa.pub`文件里复制的内容，然后添加即可。
+
+验证GitHub连接：`ssh -T git@github.com`。
